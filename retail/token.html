@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ficha de WoW</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="preload" href="https://data.wowtoken.app/v2/current/retail.json" as="fetch" type="application/json" crossorigin="anonymous" />
+        <link rel="preload" href="https://data.wowtoken.app/v2/relative/retail/us/72h.json" as="fetch" type="application/json" crossorigin="anonymous" />
+        <script defer="defer" src="main.b697c3cb753b872d9604.js"></script>
+        <link href="main.1daf4dbebd28074703d7.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="flex-container">
+            <div class="data-header">
+                <h4 style="color: cyan;">Ficha de WoW <u id="token">0</u> Gold</h4>
+                <div class="high-low">
+                    <p style="width:50%;">Melhor preço nos últimos <em id="low-time">3 dias</em>: <u id="low-val">0</u></p>
+                    <p style="width:50%;">Pior preço nos últimos <em id="high-time">3 dias</em>: <u id="high-val">0</u></p>
+                </div>
+            </div>
+            <div id="chart-frame">
+                <div class="lds-ripple" id="loader">
+                    <div></div>
+                    <div></div>
+                </div>
+                <canvas id="token-chart"></canvas>
+                <div id="option_select">
+                    <fieldset id="basic-options">
+                        <legend>Opções do gráfico</legend>
+                        <div>
+                            <label for="region">Região:</label>
+                            <select name="region" id="region">
+                                <option value="us">BR</option>
+
+                            </select>
+                        </div>
+                        <div>
+                            <label for="time">Tempo Selecionado:</label>
+                            <select name="time" id="time">
+                                <option value="72h">3 Dias</option>
+                                <option value="168h">7 Dias</option>
+                                <option value="336h">14 Dias</option>
+                                <option value="720h">1 Mês</option>
+                                <option value="90d">3 Meses</option>
+                                <option value="6m">6 Meses</option>
+                                <option value="1y">1 Ano</option>
+                                <option value="2y">2 Anos</option>
+                                <option value="all">Tudos os Valores Disponíveis</option>
+                            </select>
+                        </div>
+                       
+                    </fieldset>
+                    <fieldset id="advanced-options">
+ 
+                        <fieldset id="period-overlay-options">
+                            <label for="period-overlay" id="period-overlay-label">Overlay previous <em id="period-time">0 hours</em> on current period:</label> <input type="checkbox" id="period-overlay" name="period-overlay" />
+                        </fieldset>
+                        <fieldset id="y-start-options"><label for="y-start">Start y-axis at 0:</label> <input type="checkbox" id="y-start" name="y-start" /></fieldset>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
